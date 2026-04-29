@@ -1,0 +1,19 @@
+Pour procéder à la décompilation du fichier app.apk, j’ai tapé la commande suivante : « apktool -d app.apk -o application_decompile ».
+Mais j’ai rencontré cette erreur après avoir tapé cette commande.
+
+Pour résoudre cette erreur, j’ai enlevé le « - » avant le d. Voici ce qui s’affiche quand j’ai procédé à la modification de la commande.
+
+Puis j’ai procédé à la compilation en tapant la commande suivante.
+« apktool b application_decompile -o application compile ».
+
+Après avoir tapé la commande précédente, j’ai rencontré cette erreur. Pour résoudre cette erreur, je suis allé dans le fichier « apktool.yml » pour supprimer la ligne « !!brut.androlib.meta.MetaInfo ».
+
+Après avoir supprimé cette ligne, j’ai relancé ma commande « apktool b application_decompile -o application compile ». Mais je rencontre une nouvelle erreur.
+
+Pour résoudre ce problème, je tape cette commande « rm -rf application _decompile » pour supprimer le dossier « application_decompile ».
+
+Maintenant, je tape la commande suivante « apktool d app.apk -r -o application_decompile » qui procède à la décompilation qui ignore les ressources pour éviter les erreurs de noms de fichiers.
+
+Maintenant, je vais procéder à la compilation avec la commande suivante « apktool b application_decompile -o app_comile.apk ».
+
+On peut voir que la commande pour compiler a fonctionné.
